@@ -1,9 +1,21 @@
-import { BaseModel, column } from "@adonisjs/lucid/orm";
-import { DateTime } from "luxon";
+import { DateTime } from 'luxon'
+import { BaseModel, column } from '@adonisjs/lucid/orm'
 
 export default class User extends BaseModel {
   @column({ isPrimary: true })
   declare id: number
+
+  @column()
+  declare username: string
+
+  @column()
+  declare email: string
+
+  @column()
+  declare password: string
+
+  @column()
+  declare thumbnail: string
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
